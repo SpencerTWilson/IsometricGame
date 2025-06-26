@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmjsim1fnabtg"]
+
+[ext_resource type="Texture2D" uid="uid://df6oqm51btroc" path="res://assets/Isometric Tower defence pack/Preview.png" id="1_p7m3g"]
+[ext_resource type="PackedScene" uid="uid://dfitmx7j8ugij" path="res://panda/panda.tscn" id="2_g4v5f"]
+
+[node name="world" type="Node2D"]
+
+[node name="Preview" type="Sprite2D" parent="."]
+position = Vector2(540, 304)
+scale = Vector2(0.421914, 0.428741)
+texture = ExtResource("1_p7m3g")
+
+[node name="panda" parent="." instance=ExtResource("2_g4v5f")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 323)
