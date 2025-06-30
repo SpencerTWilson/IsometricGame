@@ -3,9 +3,6 @@
 [ext_resource type="Script" path="res://panda.gd" id="1_k7k2p"]
 [ext_resource type="Texture2D" uid="uid://dfas1fyb1isy7" path="res://assets/panda/Red Panda Sprite Sheet.png" id="2_vxpji"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_2r3xc"]
-radius = 7.07107
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_am7l7"]
 atlas = ExtResource("2_vxpji")
 region = Rect2(0, 0, 32, 32)
@@ -56,12 +53,12 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="panda" type="CharacterBody2D" groups=["units"]]
+[sub_resource type="CircleShape2D" id="CircleShape2D_2r3xc"]
+radius = 7.07107
+
+[node name="panda" type="Node2D"]
 scale = Vector2(2.44, 2.44)
 script = ExtResource("1_k7k2p")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_2r3xc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -70,4 +67,7 @@ sprite_frames = SubResource("SpriteFrames_ptgqe")
 animation = &"idle"
 frame_progress = 0.943675
 
-[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_2r3xc")
