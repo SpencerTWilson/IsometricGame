@@ -137,12 +137,12 @@ position = Vector2(-337, -128)
 position = Vector2(28, 24)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-visible = false
 navigation_polygon = SubResource("NavigationPolygon_0ih0a")
 
-[node name="command" type="Node2D" parent="." node_paths=PackedStringArray("selection_area", "collision_shape")]
+[node name="command" type="Node2D" parent="." node_paths=PackedStringArray("selcected_units", "selection_area", "collision_shape")]
 scale = Vector2(2.25, 2.25)
 script = ExtResource("3_0ow46")
+selcected_units = [NodePath("../panda"), NodePath("../panda2"), NodePath("../panda3")]
 selection_area = NodePath("SelectionArea")
 collision_shape = NodePath("SelectionArea/CollisionShape2D")
 
